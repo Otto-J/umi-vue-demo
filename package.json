@@ -1,18 +1,27 @@
 {
   "private": true,
-  "author":"姬辛宝 <jixinbao@digitforce.com>",
+  "author": "姬辛宝 <jixinbao@digitforce.com>",
   "scripts": {
-    "dev": "umi dev",
     "build": "umi build",
+    "dev": "umi dev",
     "postinstall": "umi setup",
+    "lint": "umi lint",
     "start": "npm run dev"
   },
   "dependencies": {
-    "vue": "^3.2.36",
-    "umi": "^4.0.19"
+    "@arco-design/web-vue": "^2.36.0",
+    "pinia": "^2.0.22",
+    "umi": "^4.0.19",
+    "vue": "^3.2.36"
   },
   "devDependencies": {
-    "typescript": "^4.1.2",
-    "@umijs/preset-vue": "^4.0.19"
+    "@umijs/lint": "^4.0.19",
+    "@umijs/preset-vue": "^4.0.19",
+    "eslint": "^8.23.0",
+    "prettier": "^2",
+    "prettier-plugin-organize-imports": "^2",
+    "prettier-plugin-packagejson": "^2",
+    "stylelint": "^14.11.0",
+    "typescript": "^4.1.2"
   }
 }

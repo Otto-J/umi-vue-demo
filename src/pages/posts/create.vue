@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import  from './create.less';
+import './create.less';
 </script>
 
 <style></style>

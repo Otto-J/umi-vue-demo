@@ -1,0 +1,10 @@
+### reg
+POST http://localhost:8000/api/register HTTP/1.1
+content-type: application/json
+
+{
+    "email":"fa10@ijust.cc",
+    "password":"12345",
+    "name":"otto10",
+    "avatarUrl":""
+}

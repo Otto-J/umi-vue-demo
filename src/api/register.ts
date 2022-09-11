@@ -6,12 +6,8 @@ import { signToken } from '@/utils/jwt';
 const postReg = async (req: UmiApiRequest, res: UmiApiResponse) => {
   try {
     const prisma = new PrismaClient();
-    // console.log(req.body, 'req body');
-    // prisma.user.create({
-    //   data: {
-    //     email
-    //   }
-    // })
+    console.log(req.body, 'req body');
+
     const user = await prisma.user.create({
       data: {
         email: req.body.email,

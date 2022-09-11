@@ -1,0 +1,35 @@
+### post Post ok
+
+POST http://localhost:8000/api/posts HTTP/1.1
+content-type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyOTA2NTYzfQ.6MysqFciDuHN18uwAHIGQC1JDSp9kg9W62pIXdNVxaQ; path=/
+
+{
+    "title":"demo",
+    "content":"12345",
+    "tags":["a","b"],
+    "imageUrl":""
+}
+
+### res
+{
+  "id": 1,
+  "createdAt": "2022-09-11T14:39:39.606Z",
+  "updatedAt": "2022-09-11T14:39:39.767Z",
+  "title": "demo",
+  "content": "12345",
+  "authorId": 1,
+  "imageUrl": "",
+  "tags": "a,b"
+}
+
+### posts get
+GET http://localhost:8000/api/posts HTTP/1.1
+content-type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyOTA2NTYzfQ.6MysqFciDuHN18uwAHIGQC1JDSp9kg9W62pIXdNVxaQ; path=/
+
+
+### posts /1 get
+GET http://localhost:8000/api/posts/1 HTTP/1.1
+content-type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYyOTA2NTYzfQ.6MysqFciDuHN18uwAHIGQC1JDSp9kg9W62pIXdNVxaQ; path=/

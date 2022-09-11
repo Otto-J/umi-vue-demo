@@ -10,6 +10,7 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
       prisma = new PrismaClient();
       const allPosts = await prisma.post.findMany({
         include: { author: true },
+        // todo 这里你没有隐藏 password
       });
       res.status(200).json(allPosts);
       await prisma.$disconnect();
@@ -21,7 +22,11 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
           message: 'Unauthorized',
         });
       }
+
       const authorId = (await verifyToken(req.cookies.token)).id;
+      console.log('req, cookie:', req.cookies.token);
+      console.log('req, req body,', req.body);
+      console.log('res, user', authorId);
       prisma = new PrismaClient();
       const newPost = await prisma.post.create({
         data: {
@@ -33,6 +38,7 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
           imageUrl: req.body.imageUrl,
         },
       });
+      console.log('res,new post', newPost);
       res.status(200).json(newPost);
       await prisma.$disconnect();
       break;

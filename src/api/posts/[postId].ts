@@ -6,6 +6,7 @@ const getFun = async (req: any, res: any) => {
   let prisma: PrismaClient;
   let post: any;
   prisma = new PrismaClient();
+  console.log('req,', req.params);
   post = await prisma.post.findUnique({
     where: { id: +req.params.postId },
     include: { author: true },
